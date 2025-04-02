@@ -1,14 +1,48 @@
 html,
 body {
-  --bs-light-rgb: 236, 236, 236;
+  --bs-light-rgb: 173, 216, 225;
   box-sizing: border-box;
   height: 100%;
   padding: 0;
   margin: 0;
+  background: fixed top url("/landing-page.png") no-repeat;
+  background-size: 30% 85%;
 }
+
 .wrapper {
   box-sizing: border-box;
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
+
+:root {
+  --nat-navbar-bg: #A52A2A;
+  --nat-navbar-bg-rgb: 165, 42, 42;
+  --nat-navbar-text-color: brown;
+}
+
+footer, footer a {
+  color: var(--nat-navbar-text-color);
+}
+
+body .navbar {
+  --bs-navbar-active-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-brand-color: var(--nat-navbar-text-color);
+  --bs-navbar-brand-hover-color: var(--nat-navbar-highlight-text);
+  --bs-navbar-color: var(--nat-navbar-text-color);
+  --bs-navbar-hover-color: var(--nat-navbar-highlight-text);
+}
+
+.bg-dark a.dropdown-item {
+  color: var(--nat-navbar-bg);
+}
+
+.rainbow-text {
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text; /* For Safari */
+  background-clip: text; /* For modern browsers */
+  color: transparent; /* Makes text color transparent so the gradient is visible */
+  font-weight: bold;
+}
+
