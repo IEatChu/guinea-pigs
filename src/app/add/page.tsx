@@ -13,6 +13,7 @@ const AddStuff = async () => {
   );
   return (
     <main>
+      <h1 className="text-center">Welcome to Stories & Photo</h1>
       <AddStuffForm />
     </main>
   );

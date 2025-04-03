@@ -5,9 +5,9 @@
   ],
 
   "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+    { "name": "Fluffy", "age": 2, "breed": "American", "story": "Fluffy is a playful guinea pig who loves to explore.", "photo": "https://example.com/photos/fluffy.jpg", "owner": "john@foo.com" },
+    { "name": "Squeaky", "age": 3,"breed": "Peruvian", "story": "Squeaky is a shy guinea pig who loves cuddles.", "photo": "https://example.com/photos/squeaky.jpg", "owner": "john@foo.com" },
+    { "name": "Fluffy", "age": 2, "breed": "American", "story": "Fluffy is a playful guinea pig who loves to explore.", "photo": "https://example.com/photos/fluffy.jpg", "owner": "admin@foo.com" },
+    { "name": "Squeaky", "age": 3,"breed": "Peruvian", "story": "Squeaky is a shy guinea pig who loves cuddles.", "photo": "https://example.com/photos/squeaky.jpg", "owner": "admin@foo.com" }
   ]
 }

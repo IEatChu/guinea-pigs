@@ -10,7 +10,8 @@ import { addStuff } from '@/lib/dbActions';
 import LoadingSpinner from '@/components/LoadingSpinner';
 import { AddStuffSchema } from '@/lib/validationSchemas';
 
-const onSubmit = async (data: { name: string; quantity: number; owner: string; condition: string }) => {
+const onSubmit = async (data: {
+  name: string; age: number; breed: string; story: string; photo: string; owner: string; }) => {
   // console.log(`onSubmit data: ${JSON.stringify(data, null, 2)}`);
   await addStuff(data);
   swal('Success', 'Your item has been added', 'success', {
@@ -42,7 +43,7 @@ const AddStuffForm: React.FC = () => {
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center">
-            <h2>Add Stuff</h2>
+            <h2>Stories & Photos</h2>
           </Col>
           <Card>
             <Card.Body>
@@ -57,24 +58,42 @@ const AddStuffForm: React.FC = () => {
                   <div className="invalid-feedback">{errors.name?.message}</div>
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Quantity</Form.Label>
+                  <Form.Label>Age</Form.Label>
                   <input
                     type="number"
-                    {...register('quantity')}
-                    className={`form-control ${errors.quantity ? 'is-invalid' : ''}`}
+                    {...register('age')}
+                    className={`form-control ${errors.age ? 'is-invalid' : ''}`}
                   />
-                  <div className="invalid-feedback">{errors.quantity?.message}</div>
+                  <div className="invalid-feedback">{errors.age?.message}</div>
                 </Form.Group>
                 <Form.Group>
-                  <Form.Label>Condition</Form.Label>
-                  <select {...register('condition')} className={`form-control ${errors.condition ? 'is-invalid' : ''}`}>
-                    <option value="excellent">Excellent</option>
-                    <option value="good">Good</option>
-                    <option value="fair">Fair</option>
-                    <option value="poor">Poor</option>
-                  </select>
-                  <div className="invalid-feedback">{errors.condition?.message}</div>
+                  <Form.Label>Breed</Form.Label>
+                  <input
+                    type="text"
+                    {...register('breed')}
+                    className={`form-control ${errors.breed ? 'is-invalid' : ''}`}
+                  />
+                  <div className="invalid-feedback">{errors.breed?.message}</div>
                 </Form.Group>
+                <Form.Group>
+                  <Form.Label>Story</Form.Label>
+                  <textarea
+                    {...register('story')}
+                    className={`form-control ${errors.story ? 'is-invalid' : ''}`}
+                    placeholder="Tell us the story about your guinea pig"
+                    rows={4}
+                  />
+                  <div className="invalid-feedback">{errors.story?.message}</div>
+                </Form.Group>
+                <Form.Label>Photo</Form.Label>
+                <input
+                  type="text"
+                  {...register('photo')}
+                  className={`form-control ${errors.photo ? 'is-invalid' : ''}`}
+                  placeholder="Enter the image URL"
+                />
+                <div className="invalid-feedback">{errors.photo?.message}</div>
+
                 <input type="hidden" {...register('owner')} value={currentUser} />
                 <Form.Group className="form-group">
                   <Row className="pt-3">

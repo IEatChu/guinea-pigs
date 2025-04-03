@@ -1,6 +1,6 @@
 'use server';
 
-import { Stuff, Condition } from '@prisma/client';
+import { Stuff} from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
@@ -9,22 +9,25 @@ import { prisma } from './prisma';
  * Adds a new stuff to the database.
  * @param stuff, an object with the following properties: name, quantity, owner, condition.
  */
-export async function addStuff(stuff: { name: string; quantity: number; owner: string; condition: string }) {
+export async function addStuff(stuff: {
+  name: string; age: number; breed: string; story: string; photo: string, owner: string }) {
   // console.log(`addStuff data: ${JSON.stringify(stuff, null, 2)}`);
-  let condition: Condition = 'good';
-  if (stuff.condition === 'poor') {
-    condition = 'poor';
-  } else if (stuff.condition === 'excellent') {
-    condition = 'excellent';
-  } else {
-    condition = 'fair';
-  }
+  // let condition: Condition = 'good';
+  // if (stuff.condition === 'poor') {
+  //  condition = 'poor';
+  // } else if (stuff.condition === 'excellent') {
+  //   condition = 'excellent';
+  // } else {
+  //  condition = 'fair';
+  // }
   await prisma.stuff.create({
     data: {
       name: stuff.name,
-      quantity: stuff.quantity,
+      age: stuff.age,
+      breed: stuff.breed,
+      photo: stuff.photo,
+      story: stuff.story,
       owner: stuff.owner,
-      condition,
     },
   });
   // After adding, redirect to the list page
